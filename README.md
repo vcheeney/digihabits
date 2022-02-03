@@ -30,13 +30,13 @@ As I was reading a lot of self-development books at that time. I thought that bu
 
 #### Habits page
 
-The habits page displays the user's habits and past 8 days' entries. If a user completes a habit on a day he can log in and mark ✔ it completed. The actual day is highlighted in the green primary color.
+The habits page displays the user's habits and past 8 days' entries. If a user completes a habit on a day he can log in and mark ✔ it completed. The actual day is highlighted in the green primary colour.
 
 ![Feature](docs/screenshots/habits.png)
 
 #### Create habit page
 
-The habit creation page allows a user to create an habit. He enters his habit description in the text field and select the days he wants to complete that habit in the dropdown. There is a "Specify" option in case the user wants to select many different days throughout the week.
+The habit creation page allows a user to create a habit. He enters his habit description in the text field and selects the days he wants to complete that habit in the dropdown. There is a "Specify" option in case the user wants to select many different days throughout the week.
 
 ![Feature](docs/screenshots/create.png)
 
@@ -54,7 +54,7 @@ The about page provides information about what got me interested in starting thi
 
 #### Contact page
 
-The contact page used to allow users to send me messages when the app was in production.
+It used to allow users to send me messages when the app was in production.
 
 ![Feature](docs/screenshots/contact.png)
 
