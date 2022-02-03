@@ -1,0 +1,63 @@
+<main>
+  <section class="settings">
+    <div class="container centered-page">
+      <form
+        (submit)="updateUser($event, updateUserForm)"
+        #updateUserForm="ngForm"
+      >
+        <h2>Information</h2>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input
+            matInput
+            type="email"
+            name="email"
+            ngModel
+            #emailInput="ngModel"
+            placeholder="abc@xyz.com"
+            required
+            email
+            [(ngModel)]="user.email"
+          />
+          <mat-error *ngIf="emailInput.invalid"
+            >Please enter a valid email.</mat-error
+          >
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Firstname</mat-label>
+          <input
+            matInput
+            type="text"
+            name="prenom"
+            ngModel
+            #prenomInput="ngModel"
+            [(ngModel)]="user.prenom"
+          />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Lastname</mat-label>
+          <input
+            matInput
+            type="text"
+            name="nom"
+            ngModel
+            #nomInput="ngModel"
+            [(ngModel)]="user.nom"
+          />
+        </mat-form-field>
+
+        <button
+          id="submit-settings-button"
+          mat-raised-button
+          color="primary"
+          type="submit"
+        >
+          Save
+        </button>
+      </form>
+    </div>
+  </section>
+</main>

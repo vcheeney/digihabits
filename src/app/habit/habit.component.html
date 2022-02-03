@@ -1,0 +1,81 @@
+<main>
+  <section class="habits">
+    <div class="container">
+      <div *ngIf="habits && habits.length > 0" id="habitsList">
+        <mat-card>
+          <!-- Affichage des dates -->
+          <div class="line">
+            <div class="title">
+              <h3>Dates / Habits</h3>
+            </div>
+            <div class="entries">
+              <div class="entry" *ngFor="let date of shownPastDates">
+                <div
+                  class="dateText"
+                  [className]="
+                    date.fulldate.getTime() === today.getTime()
+                      ? 'dateText activeDay'
+                      : 'dateText'
+                  "
+                >
+                  <span>{{ date.day }}</span>
+                  <span>{{ date.date }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Affichage des entrées des habitudes -->
+          <div class="line" *ngFor="let habit of habits">
+            <mat-divider></mat-divider>
+            <div class="title">
+              <div>
+                <h6>
+                  <span class="hide">I will </span
+                  ><strong>{{ habit.action }}</strong>
+                </h6>
+                <span class="subtitle">every {{ habit.recurrenceText }}.</span>
+              </div>
+              <div class="actions">
+                <!-- <img src="assets/edit.svg" alt="edit.svg" (click)="editHabit(habit)"> -->
+                <img
+                  src="assets/icons/delete-button.svg"
+                  alt="button-delete.svg"
+                  (click)="deleteHabit(habit)"
+                />
+              </div>
+            </div>
+            <div class="entries">
+              <div class="entry" *ngFor="let date of shownPastDates">
+                <mat-checkbox
+                  *ngIf="
+                    habit.recurrence.indexOf(date.daynumber) !== -1 &&
+                    date.fulldate.getTime() >= habit.creationDate.getTime()
+                  "
+                  color="primary"
+                  [checked]="isChecked(habit, date.fulldate)"
+                  [disabled]="date.fulldate.getTime() !== today.getTime()"
+                  (change)="
+                    updateEntry(habit._id, date.fulldate, $event.checked)
+                  "
+                ></mat-checkbox>
+              </div>
+            </div>
+          </div>
+        </mat-card>
+        <button
+          mat-button
+          routerLink="/habits/add"
+          routerLinkActive="router-link-active"
+        >
+          <span>Add an habit</span>
+          <img src="assets/icons/add.svg" alt="add.svg" />
+        </button>
+      </div>
+      <div *ngIf="!habits || habits.length === 0" id="noHabitsYet">
+        <p>You have not created an habit yet.</p>
+        <p class="link" routerLink="/habits/add">Create your first habit</p>
+      </div>
+    </div>
+  </section>
+</main>

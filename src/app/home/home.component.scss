@@ -1,0 +1,338 @@
+$svgheight: 5vw;
+svg {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: $svgheight;
+}
+
+/*
+ * Styles des différentes sections
+*/
+
+section.hero {
+  position: relative;
+  background: #00ac00;
+  height: 375px;
+
+  @media screen and (max-width: 992px) {
+    & {
+      height: 300px;
+    }
+  }
+
+  .container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+section.under-hero {
+  display: flex;
+  min-height: 400px;
+
+  @media screen and (min-width: 992px) {
+    & {
+      min-height: 270px;
+    }
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+section.why {
+  display: flex;
+  min-height: 550px;
+
+  position: relative;
+  background: #efefef;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  img {
+    width: 75px;
+    margin-top: 40px;
+  }
+
+  svg {
+    &.top {
+      top: 0;
+    }
+  }
+}
+
+section.how {
+  position: relative;
+  background: #efefef;
+  text-align: left;
+
+  margin-top: 30px;
+
+  .container {
+    padding-top: 25px;
+
+    #steps {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 0.5fr 0.5fr 1fr;
+      grid-template-areas:
+        'step1text step1image'
+        'step2text step1image'
+        'step2image step2image';
+
+      @media screen and (max-width: 767px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas:
+          'step1text'
+          'step1image'
+          'step2text'
+          'step2image';
+        div {
+          margin: 10px 0;
+        }
+      }
+
+      img {
+        width: 100%;
+        // box-shadow: 2px 2px 18px -5px rgba(0,0,0,0.75);
+      }
+
+      div {
+        display: flex;
+        align-items: center;
+      }
+
+      .text-div {
+        display: flex;
+        align-items: center;
+        .step-number {
+          color: white;
+          background: #00ac00;
+          font-size: 30px;
+          font-weight: bold;
+          padding: 10px 20px;
+          border-radius: 50px;
+        }
+        p {
+          margin: 0 15px;
+        }
+      }
+
+      div {
+        box-sizing: border-box;
+      }
+
+      .step1text {
+        grid-area: step1text;
+      }
+
+      .step2text {
+        grid-area: step2text;
+      }
+
+      .step1image {
+        grid-area: step1image;
+      }
+
+      .step2image {
+        grid-area: step2image;
+      }
+    }
+  }
+
+  svg {
+    &.top {
+      top: -$svgheight;
+      polygon {
+        fill: #efefef;
+      }
+    }
+  }
+}
+
+section.try {
+  position: relative;
+  background: #efefef;
+
+  svg {
+    bottom: -$svgheight;
+    polygon {
+      fill: #efefef;
+    }
+  }
+
+  .container {
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    h2 {
+      margin-bottom: 40px;
+      @media screen and (max-width: 767px) {
+        & {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    #options {
+      p {
+        margin-right: 30px;
+      }
+
+      button {
+        width: 100%;
+        height: 70px;
+        margin: 5px 0;
+        font-size: 25px;
+        background: #cdcdcd;
+
+        &#button-signup {
+          color: white;
+          font-weight: bold;
+          background: #00ac00;
+        }
+      }
+
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      grid-template-rows: auto auto;
+      grid-template-areas:
+        'text-demo button-demo'
+        'text-signup button-signup';
+
+      @media screen and (max-width: 767px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas:
+          'text-demo'
+          'button-demo'
+          'text-signup'
+          'button-signup';
+
+        text-align: center;
+        button {
+          margin-top: 10px;
+        }
+
+        p {
+          margin-top: 30px;
+        }
+
+        h2 {
+          margin-bottom: 0;
+        }
+      }
+
+      .text-demo {
+        grid-area: text-demo;
+      }
+
+      .text-signup {
+        grid-area: text-signup;
+      }
+
+      .button-demo {
+        grid-area: button-demo;
+      }
+
+      .button-signup {
+        grid-area: button-signup;
+      }
+    }
+  }
+}
+
+section.inspiration {
+  margin: 120px 0px 50px 0px;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+
+      li {
+        margin: 10px;
+        padding: 15px;
+        background: #efefef;
+        border-radius: 10px;
+      }
+    }
+  }
+}
+
+footer {
+  position: relative;
+  background: #efefef;
+
+  padding: 50px 0 30px;
+
+  svg {
+    top: 0;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 100px;
+    margin-bottom: 30px;
+
+    .credentials {
+      h3 {
+        font-size: 45px;
+        font-weight: bold;
+        margin: 0;
+        span {
+          color: #00ac00;
+        }
+      }
+    }
+
+    @media screen and (max-width: 767px) {
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      text-align: center;
+      height: 150px;
+
+      .credentials {
+        h3 {
+          margin-bottom: 20px;
+        }
+        margin-bottom: 20px;
+      }
+    }
+
+    strong {
+      &:hover {
+        color: #00ac00;
+        cursor: pointer;
+      }
+      &:active {
+        color: #008000;
+        outline: none;
+      }
+    }
+  }
+}

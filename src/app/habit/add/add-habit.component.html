@@ -1,0 +1,74 @@
+<main>
+  <section class="add-habit">
+    <div class="container">
+      <div class="formContainer" *ngIf="!isLoading">
+        <form (submit)="saveHabit(habitForm)" #habitForm="ngForm">
+          <div class="formfields">
+            <p>I will</p>
+            <mat-form-field appearance="outline">
+              <input
+                matInput
+                name="action"
+                ngModel
+                #action="ngModel"
+                required
+                placeholder="i.e.: exercise"
+              />
+              <mat-error *ngIf="action.invalid"
+                >Please enter a habit.</mat-error
+              >
+            </mat-form-field>
+            <p>every</p>
+
+            <mat-form-field appearance="outline" id="reccurence">
+              <mat-select
+                [formControl]="reccurenceControl"
+                required
+                (valueChange)="changeReccurence($event)"
+              >
+                <mat-option [value]="7">Days</mat-option>
+                <mat-option
+                  *ngFor="let reccurence of reccurencesPossibilities"
+                  [value]="reccurence.daynumber"
+                >
+                  {{ reccurence.day }}
+                </mat-option>
+                <mat-option [value]="8">specify</mat-option>
+              </mat-select>
+              <mat-hint
+                >The "specify" option allows you to select multiple
+                days.</mat-hint
+              >
+              <mat-error *ngIf="reccurenceControl.hasError('required')"
+                >Please select a recurrence.</mat-error
+              >
+            </mat-form-field>
+          </div>
+
+          <!-- Options de récurrence -->
+          <div id="recurrenceOptions" *ngIf="specifying">
+            <div
+              class="recurrenceOption"
+              *ngFor="let reccurence of reccurencesPossibilities"
+            >
+              <span>{{ reccurence.day }}</span>
+              <mat-checkbox
+                [value]="reccurence.daynumber"
+                color="primary"
+                (change)="toggleDay(reccurence.daynumber)"
+              ></mat-checkbox>
+            </div>
+          </div>
+
+          <!-- Bouton de soumission -->
+          <div id="buttonDiv">
+            <button mat-fab color="primary">+</button>
+          </div>
+        </form>
+        <div id="cancelLink">
+          <span routerLink="/habits">Cancel</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

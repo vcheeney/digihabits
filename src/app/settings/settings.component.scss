@@ -1,0 +1,38 @@
+form {
+  width: 100%;
+}
+
+mat-form-field {
+  width: 100%;
+  margin: 10px 0px;
+}
+
+.layout button {
+  margin: 20px 0px 0px 0px;
+  height: 50px;
+  width: 100%;
+}
+
+mat-card#errorMessage {
+  margin: 0;
+  background-color: rgba(255, 0, 0, 0.5);
+  border: 1px solid rgba(255, 0, 0, 0.5);
+}
+
+button#submit-settings-button {
+  background: #00ac00;
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+
+section.settings {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+main {
+  height: 100%;
+}

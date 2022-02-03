@@ -1,0 +1,70 @@
+<div class="container">
+  <nav>
+    <!-- Logo -->
+    <a id="logo" routerLink="/">digi<span class="accent">habits</span></a>
+
+    <span class="spacer"></span>
+
+    <!-- Options de menu -->
+    <div id="menuOptionsContainer">
+      <img
+        src="assets/icons/menu.svg"
+        alt="menu.svg"
+        id="menuIcon"
+        (click)="toggleMenu()"
+      />
+      <ul id="menuOptions">
+        <li>
+          <a
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            routerLink="/"
+            >Home</a
+          >
+        </li>
+        <li *ngIf="userIsAuthenticated">
+          <a routerLinkActive="active" routerLink="/habits">My habits</a>
+        </li>
+        <li *ngIf="userIsAuthenticated">
+          <a routerLinkActive="active" routerLink="/settings">Settings</a>
+        </li>
+        <li>
+          <a routerLinkActive="active" routerLink="/about">About</a>
+        </li>
+        <li>
+          <a routerLinkActive="active" routerLink="/contact">Contact</a>
+        </li>
+        <li *ngIf="!userIsAuthenticated">
+          <button
+            mat-flat-button
+            id="signinButton"
+            class="importantButton"
+            routerLink="/login"
+          >
+            Login
+          </button>
+        </li>
+        <li *ngIf="!userIsAuthenticated">
+          <button
+            mat-flat-button
+            id="signupButton"
+            class="importantButton"
+            routerLink="/signup"
+          >
+            Sign up
+          </button>
+        </li>
+        <li *ngIf="userIsAuthenticated">
+          <button
+            mat-flat-button
+            id="signoutButton"
+            class="importantButton"
+            (click)="logout()"
+          >
+            Sign out
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>

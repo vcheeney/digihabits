@@ -1,0 +1,56 @@
+<main>
+  <section class="auth">
+    <div class="container centered-page">
+      <form (submit)="onLogin(loginForm)" #loginForm="ngForm">
+        <h2>Log in</h2>
+
+        <div *ngIf="authStatus && !authStatus.isConnected">
+          <mat-card id="errorMessage"
+            ><strong>Erreur:</strong> {{ authStatus.message }}</mat-card
+          >
+        </div>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input
+            matInput
+            type="email"
+            name="email"
+            ngModel
+            #emailInput="ngModel"
+            placeholder="abc@xyz.com"
+            required
+            email
+          />
+          <mat-error *ngIf="emailInput.invalid"
+            >Please enter a valid email.</mat-error
+          >
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input
+            matInput
+            type="password"
+            name="password"
+            ngModel
+            #passwordInput="ngModel"
+            required
+          />
+          <mat-error *ngIf="passwordInput.invalid"
+            >The password is required.</mat-error
+          >
+        </mat-form-field>
+
+        <button
+          id="login-button"
+          mat-raised-button
+          color="primary"
+          type="submit"
+        >
+          Log in
+        </button>
+      </form>
+    </div>
+  </section>
+</main>

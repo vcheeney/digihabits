@@ -1,0 +1,40 @@
+#development {
+  position:  sticky;
+  top: 0;
+  z-index: 20;
+
+  padding: 10px 0;
+
+  background-color: rgba(0, 173, 0, 0.60);
+  border-bottom: rgba(0, 173, 0, 0.80) 1px solid;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    margin: 0;
+    text-align: center;
+  }
+
+
+  img {
+    position: absolute;
+    right: 10px;
+  }
+
+  img:hover {
+    cursor: pointer;
+  }
+
+
+  .contactLink {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
+  .contactLink:hover {
+    cursor: pointer;
+    color: #ffffff
+  }
+}

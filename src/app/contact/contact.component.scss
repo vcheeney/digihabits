@@ -1,0 +1,51 @@
+form {
+  width: 100%;
+}
+
+mat-form-field {
+  width: 100%;
+  margin: 10px 0px;
+}
+
+.layout button {
+  margin: 20px 0px 0px 0px;
+  height: 50px;
+  width: 100%;
+}
+
+mat-card#errorMessage {
+  margin: 0;
+  background-color: rgba(255, 0, 0, 0.5);
+  border: 1px solid rgba(255, 0, 0, 0.5);
+}
+
+h1 {
+  text-align: center;
+  margin: 20px 0px 20px 0px;
+}
+
+#messageForm {
+  margin-bottom: 70px;
+}
+
+#messageSent {
+  text-align: center;
+  font-size: 1.5em;
+
+  .link {
+    cursor: pointer;
+    color: #00ac00;
+    font-weight: bold;
+  }
+}
+
+.container {
+  margin-top: 20px;
+}
+
+button#submit-contact-button {
+  background: #00ac00;
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+}

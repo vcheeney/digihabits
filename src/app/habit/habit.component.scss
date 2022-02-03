@@ -1,0 +1,202 @@
+$widthChange: 1024px;
+
+main {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+section.habits {
+  width: 100%;
+}
+
+#noHabitsYet {
+  text-align: center;
+  font-size: 1.5em;
+
+  .link {
+    cursor: pointer;
+    color: #00ac00;
+    font-weight: bold;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+#habitsList {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  button {
+    display: flex;
+    justify-content: center;
+    img {
+      padding-left: 5px;
+    }
+
+    margin-bottom: 20px;
+  }
+}
+
+mat-card {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 20px 0px;
+  padding: 0 20px;
+  background: #f1f1f1;
+}
+
+.title {
+  grid-area: title;
+
+  display: flex;
+  justify-content: space-between;
+
+  padding: 15px 0 15px 30px;
+
+  h6 {
+    margin: 0;
+    font-size: 20px;
+  }
+
+  strong {
+    color: #00ac00;
+  }
+
+  span {
+    font-size: 0.8em;
+  }
+
+  .actions {
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 25px;
+      height: 25px;
+      margin-left: 10px;
+    }
+
+    img:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.line {
+  display: grid;
+  grid-template-areas: 'entries title';
+  grid-template-rows: auto;
+}
+
+.entries {
+  grid-area: entries;
+
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+
+  padding: 15px 0;
+}
+
+.entry {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 75px;
+}
+
+.entry .dateText {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 0.8em;
+}
+
+.activeDay {
+  color: #00ac00;
+}
+
+// On doit définir une taille fixe pour nos cases de date car sinon elle ne s'aligne pas du tout.
+.date {
+  width: 50px;
+}
+
+// Ordinateur
+@media screen and (min-width: $widthChange) {
+  .line {
+    grid-template-columns: 65% 35%;
+  }
+}
+
+// Téléphone
+@media screen and (max-width: $widthChange) {
+  .line {
+    grid-template-columns: 50% 50%;
+
+    .title {
+      padding: 3px 0;
+      box-sizing: border-box;
+    }
+
+    @media screen and (max-width: 750px) {
+      & {
+        .entries {
+          padding: 0;
+        }
+
+        .hide {
+          display: none;
+        }
+
+        img {
+          display: none;
+        }
+
+        @media screen and (max-width: 500px) {
+          & {
+            h6 {
+              font-size: 16px;
+            }
+
+            span.subtitle {
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  div.line:last-of-type {
+    margin-bottom: 5px;
+  }
+
+  .title {
+    padding-right: 0;
+    align-items: center;
+    text-align: left;
+  }
+
+  div.container {
+    padding: 0;
+  }
+
+  mat-card {
+    @media screen and (max-width: 500px) {
+      & {
+        padding: 0 5px;
+      }
+    }
+  }
+}

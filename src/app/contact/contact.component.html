@@ -1,0 +1,93 @@
+<main>
+  <section class="contact">
+    <div class="container centered-page">
+      <div *ngIf="!messageSent" id="messageForm">
+        <h2>Contact</h2>
+
+        <form (submit)="sendMessage()" #contactForm="ngForm">
+          <mat-form-field appearance="outline">
+            <input
+              matInput
+              type="text"
+              name="firstname"
+              placeholder="Firstname"
+              required
+              ngModel
+              [(ngModel)]="message.firstname"
+              #firstNameInput="ngModel"
+            />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <input
+              matInput
+              type="text"
+              name="lastname"
+              placeholder="Lastname"
+              required
+              ngModel
+              [(ngModel)]="message.lastname"
+              #lastNameInput="ngModel"
+            />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <input
+              matInput
+              type="email"
+              name="email"
+              placeholder="Email"
+              required
+              email
+              ngModel
+              [(ngModel)]="message.email"
+              #emailInput="ngModel"
+            />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-select
+              name="messagetype"
+              placeholder="Topic"
+              required
+              ngModel
+              [(ngModel)]="message.messageType"
+              #messageTypeInput="ngModel"
+            >
+              <mat-option
+                *ngFor="let messageType of messageTypes"
+                [value]="messageType"
+                >{{ messageType }}</mat-option
+              >
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width" appearance="outline">
+            <textarea
+              matInput
+              name="message"
+              placeholder="Message"
+              required
+              ngModel
+              [(ngModel)]="message.message"
+              #messageInpout="ngModel"
+            ></textarea>
+          </mat-form-field>
+
+          <button
+            id="submit-contact-button"
+            mat-flat-button
+            color="primary"
+            type="submit"
+          >
+            Send
+          </button>
+        </form>
+      </div>
+      <div *ngIf="messageSent" id="messageSent">
+        <p>Your message has been sent.</p>
+        <p class="link" routerLink="/">Go back to the homepage</p>
+      </div>
+    </div>
+  </section>
+</main>
