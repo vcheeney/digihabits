@@ -1,6 +1,6 @@
 ![Homepage](docs/screenshots/project.png)
 
-# ✔️ digihabits <a href="#-project-status"><img src="https://img.shields.io/badge/Status-Archived-lightgrey?style=for-the-badge" align="right"></a>
+# ✔️ digihabits <a href="#-project-status"><img src="https://img.shields.io/badge/Status-Archived_(Oct_2019)-lightgrey?style=for-the-badge" align="right"></a>
 
 A habits tracker that helps its users implement good positive habits in their lives.
 
@@ -129,8 +129,12 @@ Access the Angular app in development mode at http://localhost:4200/
 
 ## 🚦 Project Status
 
-<img src="https://img.shields.io/badge/-Archived-lightgrey?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/Status-Archived_(Oct_2019)-lightgrey?style=for-the-badge"/>
 
-I put this project on pause in April 2019 as my college internship was draining most of my coding energy... 😂 I freshened it up a bit the following October as I was applying for my first university internship and wanted to get a more modern web dev position. Once I got in and got introduced to React, I got absorbed in this new framework and wanted to move on to new ideas. 💡
+I put this project on pause in April 2019 as my college internship was draining most of my coding energy... 😂
+
+I freshened it up a bit the following October as I was applying for my first university internship and wanted to get a more modern web dev position.
+
+Once I got in and got introduced to React, I got absorbed in this new framework and wanted to move on to new ideas. 💡
 
 #### 🔗 Check out my other [**projects**](https://github.com/vcheeney) on my GitHub profile <!-- omit in toc -->
