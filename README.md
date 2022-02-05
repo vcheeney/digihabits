@@ -2,7 +2,7 @@
 
 # ✔️ digihabits <a href="#-project-status"><img src="https://img.shields.io/badge/Status-Archived_(Oct_2019)-lightgrey?style=for-the-badge" align="right"></a>
 
-Web app that helps users develop good habits by keeping them accountable.
+A web app that helps users develop good habits by keeping them accountable.
 
 ## Table of contents <!-- omit in toc -->
 
