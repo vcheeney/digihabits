@@ -133,4 +133,4 @@ Access the Angular app in development mode at http://localhost:4200/
 
 I put this project on pause in April 2019 as my college internship was draining most of my coding energy... 😂 I freshened it up a bit the following October as I was applying for my first university internship and wanted to get a more modern web dev position. Once I got in and got introduced to React, I got absorbed in this new framework and wanted to move on to new ideas. 💡
 
-A year later, I started the [🛒 Pricebook](https://github.com/vcheeney/pricebook) project.
+#### 🔗 Check out my other [**projects**](https://github.com/vcheeney) on my GitHub profile <!-- omit in toc -->
